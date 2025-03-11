@@ -6,7 +6,7 @@
 /*   By: mhuescar <mhuescar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 12:37:06 by mhuescar          #+#    #+#             */
-/*   Updated: 2025/03/10 12:48:50 by mhuescar         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:49:30 by mhuescar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,13 @@ void	ss(void);
 //push
 void	pa(void);
 void	pb(void);
+//rotate
+void	ra(void);
+void	rb(void);
+void	rr(void);
+//reverse rotate
+void	rra(void);
+void	rrb(void);
+void	rrr(void);
 
 #endif
