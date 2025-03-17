@@ -6,7 +6,7 @@
 /*   By: mhuescar <mhuescar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 12:37:06 by mhuescar          #+#    #+#             */
-/*   Updated: 2025/03/11 17:49:30 by mhuescar         ###   ########.fr       */
+/*   Updated: 2025/03/17 18:44:40 by mhuescar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,11 @@ void	rr(void);
 void	rra(void);
 void	rrb(void);
 void	rrr(void);
+
+//sort steps utils
+
+void	push_to_stack_b(int *size);//pasa los elemento a stack_b
+void	set_stack_positions(t_stack *stack); // asigna una posicion a cada nodo
+int 	calculate_cost_b(t_stack *stack_b, int size_b);// calcula coste mov
 
 #endif
