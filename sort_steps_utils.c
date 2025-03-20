@@ -6,7 +6,7 @@
 /*   By: mhuescar <mhuescar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 16:50:53 by mhuescar          #+#    #+#             */
-/*   Updated: 2025/03/17 19:00:31 by mhuescar         ###   ########.fr       */
+/*   Updated: 2025/03/20 12:16:54 by mhuescar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,36 @@ int	calculate_cost_a (t_stack *stack_b, t_stack *stack_a)
 		return (stack_b->target_position);
 	else 
 		return (stack_b-> target_position - size_a);
+}
+
+t_stack *get_cheapest_node(void)
+{
+	t_stack	*stack_b; 
+	t_stack	*cheapest_node; // se almacena el puntero con menos coste
+	
+	int	cheapest_cost; 
+	int	total_cost;
+	
+	stack_b = *get_stack_b();//Obtenemos la cabeza de la pila 'b' llamando a la función 'get_stack_b()
+	if (!stack_b)
+		return (NULL);
+		
+	cheapest_node = NULL;
+	cheapest_cost = INT_MAX; // cualquier costo será menor que este valor
+	
+	while(stack_b)//recorremos todos los nodos de la pila
+	{
+		total_cost = absolut(stack_b->cost_a) + absolut(stack_b->cost_b);
+		
+		if(!cheapest_node || total_cost < cheapest_cost)
+		{
+			cheapest_cost = total_cost;//actualizamos al nuevo coste mas bajo
+			cheapest_node = stack_b;// actualizamos cheapest_node para que apunte al actual.
+		}
+		stack_b = stack_b->next;//avanzamos al siguiente nodo de la pila
+	}
+	
+	return cheapest_node;
+	
+	
 }

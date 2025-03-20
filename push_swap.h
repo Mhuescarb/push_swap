@@ -6,7 +6,7 @@
 /*   By: mhuescar <mhuescar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 12:37:06 by mhuescar          #+#    #+#             */
-/*   Updated: 2025/03/17 18:44:40 by mhuescar         ###   ########.fr       */
+/*   Updated: 2025/03/20 12:10:47 by mhuescar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ typedef struct s_stack
 	int				index; // indice en la lista de los elementos a ordenar
 	int				position; // posicion en la pila
 	int				target_position;// posicion objetivo en A de los elem de B
-	int				a_cost;// coste de mover el elemento al top de la pila A
-	int				b_cost;// coste de mover el elemento al top de la pila B
+	int				cost_a;// coste de mover el elemento al top de la pila A
+	int				cost_b;// coste de mover el elemento al top de la pila B
 	struct s_stack	*next;//puntero al siguiente elemento de la lista
 }		t_stack;
 
@@ -55,5 +55,8 @@ void	rrr(void);
 void	push_to_stack_b(int *size);//pasa los elemento a stack_b
 void	set_stack_positions(t_stack *stack); // asigna una posicion a cada nodo
 int 	calculate_cost_b(t_stack *stack_b, int size_b);// calcula coste mov
+//utils
+int	absolut (int c);
+
 
 #endif
